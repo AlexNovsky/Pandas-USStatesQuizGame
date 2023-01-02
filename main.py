@@ -17,12 +17,12 @@ guess_states = []
 while len(guess_states) < 50:
     answer_state = screen.textinput(title=f"{len(guess_states)}/50 Name the State",
                                     prompt="Name the State").title()
-# Creating "hidden" command to stop the game and creating list of the states, that user "forgot"
+    # Creating "hidden" command to stop the game and creating list of the states, that user "forgot"
     if answer_state == "Exit":
         missing_states = []
         for state in all_states:
             missing_states.append(state)
-#converting list to the dataframe and saving to csv file
+        # converting list to the dataframe and saving to csv file
         new_data = pandas.DataFrame(missing_states)
         new_data.to_csv("States_to_learn.csv")
         break
